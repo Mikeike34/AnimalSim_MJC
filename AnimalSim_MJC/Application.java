@@ -14,6 +14,8 @@ public class Application {
 		System.out.println(lTest.toString());
 		System.out.println("Y Coordinate is: "+lTest.getyCoord());
 		System.out.println("X Coordinate is: "+lTest.getxCoord());
+		lTest.Update(-1, -4);
+		System.out.println(lTest.toString());
 		
 		System.out.println("****************************************\n\n             Animal Tests             \n\n****************************************");
 		Animal aTest = new Animal(2,lTest);
@@ -42,6 +44,22 @@ public class Application {
 		System.out.println(gTest.toString());
 		gTest.setWingSpan(12.0);
 		System.out.println(gTest.toString());
+		
+		System.out.println("****************************************\n\n             BrownBear Tests             \n\n****************************************");
+		BrownBear bTest = new BrownBear();
+		System.out.println(bTest.toString());
+		System.out.println(bTest.getSubSpecies());
+		bTest.setSubSpecies("Grizzly");
+		System.out.println(bTest.getSubSpecies());
+		bTest.setSubSpecies("Polar");
+		System.out.println(bTest.getSubSpecies());
+		System.out.println(bTest.toString());
+		bTest.swim(1);
+		bTest.swim(2);
+		System.out.println(bTest.toString());
+		bTest.walk(1);
+		bTest.walk(2);
+		System.out.println(bTest.toString());
 		
 		
 

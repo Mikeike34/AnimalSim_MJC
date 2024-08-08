@@ -18,12 +18,13 @@ public class BrownBear extends Animal implements Walkable,Swimmable{
 		this.simID = simID;
 		this.location = l;
 		try {
-		this.subSpecies = subSpecies;
-		if(subSpecies != "Alaskan" || subSpecies != "Asiatic" || subSpecies != "European" || subSpecies != "Grizzly" || subSpecies != "Kodiak" || subSpecies != "Siberian") {
+		if(subSpecies != "Alaskan" && subSpecies != "Asiatic" && subSpecies != "European" && subSpecies != "Grizzly" && subSpecies != "Kodiak" && subSpecies != "Siberian") {
 			throw new InvalidSubspeciesException("Invalid subspecies of a brown bear.");
 		}//end if
+			this.subSpecies = subSpecies;
 		}//end try
 		catch(InvalidSubspeciesException e) {
+			System.out.println(e.getMessage());
 		}//end catch
 		full = false; 
 		rested= true;
@@ -37,7 +38,15 @@ public class BrownBear extends Animal implements Walkable,Swimmable{
 	}//end getSubSpecies
 
 	public void setSubSpecies(String subSpecies) {
+	try {
+		if(subSpecies != "Alaskan" && subSpecies != "Asiatic" && subSpecies != "European" && subSpecies != "Grizzly" && subSpecies != "Kodiak" && subSpecies != "Siberian") {
+			throw new InvalidSubspeciesException("Invalid subspecies of a brown bear.");
+		}//end if
 		this.subSpecies = subSpecies;
+	}//end try
+	catch(InvalidSubspeciesException e) {
+		System.out.println(e.getMessage());
+	}//end catch
 	}//end setSubSpecies
 
 	@Override

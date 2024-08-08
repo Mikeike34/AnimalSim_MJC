@@ -18,14 +18,14 @@ public class Animal {
 	
 	Animal(int simID, Location l) throws InvalidSimIDException{
 	try {
-		this.simID=simID;
 		if(simID < 0) {
 			throw new InvalidSimIDException("SimId cannot be less than 0.");
 		}//end if
-		}//end try
-		catch(InvalidSimIDException e) {
-			System.out.println(e.getMessage());
-		}//end catch
+		this.simID=simID;
+	}//end try
+	catch(InvalidSimIDException e){
+		System.out.println(e.getMessage());
+	}//end catch
 	this.location = l;
 	full = false;
 	rested = true;
@@ -65,17 +65,16 @@ public class Animal {
 	}//end getSimID
 
 
-	public void setSimID(int simID) {
+	public void setSimID(int simID) throws InvalidSimIDException {
 		try {
-			this.simID=simID;
-			if(simID < 0) {
-				throw new InvalidSimIDException("SimId cannot be less than 0.");
-			}//end if
-			}//end try
-			catch(InvalidSimIDException e) {
-				System.out.println(e.getMessage());
-			}//end catch
-			
+		if(simID < 0) {
+			throw new InvalidSimIDException("SimId cannot be less than 0.");
+		}//end if
+		this.simID=simID;
+		}//end try
+		catch(InvalidSimIDException e){
+			System.out.println(e.getMessage());
+		}//end catch
 	}//end setSimID
 
 

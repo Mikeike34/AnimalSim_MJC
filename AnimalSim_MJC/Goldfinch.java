@@ -18,10 +18,10 @@ public class Goldfinch extends Animal implements Flyable,Walkable{
 		this.location = l;
 		
 		try {
-		this.wingSpan = ws;
-		if(ws < 5.0 || ws > 11.0) {
-			throw new InvalidWingspanException("This is an invalid wingspan.");
-		}//end if
+			if(ws < 5.0 || ws > 11.0) {
+				throw new InvalidWingspanException("This is an invalid wingspan.");
+			}//end if
+			this.wingSpan = ws;
 		}//end try
 		catch(InvalidWingspanException e){
 			System.out.println(e.getMessage());
@@ -37,14 +37,14 @@ public class Goldfinch extends Animal implements Flyable,Walkable{
 
 	public void setWingSpan(double wingSpan) {
 		try {
-			this.wingSpan = wingSpan;
 			if(wingSpan < 5.0 || wingSpan > 11.0) {
 				throw new InvalidWingspanException("This is an invalid wingspan.");
 			}//end if
-			}//end try
-			catch(InvalidWingspanException e){
-				System.out.println(e.getMessage());
-			}//end catch
+			this.wingSpan = wingSpan;
+		}//end try
+		catch(InvalidWingspanException e){
+			System.out.println(e.getMessage());
+		}//end catch
 	}//end setWingSpan
 
 	@Override
