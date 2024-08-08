@@ -42,4 +42,29 @@ public class Location {
 		return coordinates;
 	}//end getCoordinates
 
+	public int getxCoord() {
+		return xCoord;
+	}//end getxCoord
+
+	public void setxCoord(int xCoord) {
+		this.xCoord = xCoord;
+	}//end setxCoord
+
+	public int getyCoord() {
+		return yCoord;
+	}//end getyCoord
+
+	public void setyCoord(int yCoord) {
+		this.yCoord = yCoord;
+	}//end setyCoord
+
+	@Override
+	public String toString() {
+		return "Location [xCoord=" + xCoord + ", yCoord=" + yCoord + "]";
+	}//end toString
+	
+	
+	
+	
+
 }//end class

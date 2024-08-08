@@ -48,14 +48,35 @@ public class BrownBear extends Animal implements Walkable,Swimmable{
 
 	@Override
 	public void swim(int direction) {
-		
-		
+		if(direction == 1) /*North*/ {
+			location.setyCoord(location.getyCoord()+2);
+		}
+		else if(direction == 2)/*East*/{
+			location.setxCoord(location.getxCoord()+2);
+		}
+		else if(direction == 3)/*South*/{
+			location.setyCoord(location.getyCoord()-2);
+		}
+		else if(direction == 4)/*West*/{
+			location.setxCoord(location.getxCoord()-2);
+		}
 		
 	}//end swim
 
 	@Override
 	public void walk(int direction) {
-		
+		if(direction == 1) /*North*/ {
+			location.setyCoord(location.getyCoord()+3);
+		}
+		else if(direction == 2)/*East*/{
+			location.setxCoord(location.getxCoord()+3);
+		}
+		else if(direction == 3)/*South*/{
+			location.setyCoord(location.getyCoord()-3);
+		}
+		else if(direction == 4)/*West*/{
+			location.setxCoord(location.getxCoord()-3);
+		}
 		
 	}//end walk
 	

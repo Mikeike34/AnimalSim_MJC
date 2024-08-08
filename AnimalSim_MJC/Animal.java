@@ -24,11 +24,12 @@ public class Animal {
 		}//end if
 		}//end try
 		catch(InvalidSimIDException e) {
+			System.out.println(e.getMessage());
 		}//end catch
 	this.location = l;
 	full = false;
 	rested = true;
-	}//end preffered constructor
+	}//end preferred constructor
 	
 	
 	public boolean eat() {
@@ -65,7 +66,16 @@ public class Animal {
 
 
 	public void setSimID(int simID) {
-		this.simID = simID;
+		try {
+			this.simID=simID;
+			if(simID < 0) {
+				throw new InvalidSimIDException("SimId cannot be less than 0.");
+			}//end if
+			}//end try
+			catch(InvalidSimIDException e) {
+				System.out.println(e.getMessage());
+			}//end catch
+			
 	}//end setSimID
 
 
@@ -97,6 +107,14 @@ public class Animal {
 	public void setRested(boolean rested) {
 		this.rested = rested;
 	}//end setRested
+
+
+	@Override
+	public String toString() {
+		return "Animal [simID=" + simID + ", location=" + location + ", full=" + full + ", rested=" + rested + "]";
+	}//end toString
+	
+	
 	
 	
 

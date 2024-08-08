@@ -24,6 +24,7 @@ public class Goldfinch extends Animal implements Flyable,Walkable{
 		}//end if
 		}//end try
 		catch(InvalidWingspanException e){
+			System.out.println(e.getMessage());
 		}//end catch
 		
 		full = false;
@@ -35,7 +36,15 @@ public class Goldfinch extends Animal implements Flyable,Walkable{
 	}//end getWingSpan
 
 	public void setWingSpan(double wingSpan) {
-		this.wingSpan = wingSpan;
+		try {
+			this.wingSpan = wingSpan;
+			if(wingSpan < 5.0 || wingSpan > 11.0) {
+				throw new InvalidWingspanException("This is an invalid wingspan.");
+			}//end if
+			}//end try
+			catch(InvalidWingspanException e){
+				System.out.println(e.getMessage());
+			}//end catch
 	}//end setWingSpan
 
 	@Override
@@ -46,14 +55,24 @@ public class Goldfinch extends Animal implements Flyable,Walkable{
 
 	@Override
 	public void walk(int direction) {
-		
+		if(direction == 1) /*North*/ {
+			location.setyCoord(location.getyCoord()+1);
+		}
+		else if(direction == 2)/*East*/{
+			location.setxCoord(location.getxCoord()+1);
+		}
+		else if(direction == 3)/*South*/{
+			location.setyCoord(location.getyCoord()-1);
+		}
+		else if(direction == 4)/*West*/{
+			location.setxCoord(location.getxCoord()-1);
+		}
 		
 	}//end walk
 
 	@Override
 	public void fly(Location l) {
-		
-		
+		location.Update(l.getxCoord(), l.getyCoord());
 	}//end fly
 	
 
