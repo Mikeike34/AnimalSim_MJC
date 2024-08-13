@@ -8,12 +8,12 @@ public class Application {
 		System.out.println(lTest.toString());
 		lTest.Update(10, 8);
 		System.out.println(lTest.toString());
-		lTest.setxCoord(12);
+		lTest.setxCoord(12); //testing setter xCoord
 		System.out.println(lTest.toString());
-		lTest.setyCoord(2);
+		lTest.setyCoord(2); //testing setter yCoord
 		System.out.println(lTest.toString());
-		System.out.println("Y Coordinate is: "+lTest.getyCoord());
-		System.out.println("X Coordinate is: "+lTest.getxCoord());
+		System.out.println("Y Coordinate is: "+lTest.getyCoord()); //testing getter yCoord
+		System.out.println("X Coordinate is: "+lTest.getxCoord()); //testing getter xCoord
 		lTest.Update(-1, -4); //Triggers Exception 
 		System.out.println(lTest.toString()); //shows Coordinates did not change
 		
@@ -43,7 +43,8 @@ public class Application {
 		gTest.fly(lTest);
 		System.out.println(gTest.toString());
 		gTest.setWingSpan(12.0); //Triggers Exception 
-		System.out.println(gTest.toString()); //shows wingspan did not change
+		System.out.println(gTest.getWingSpan()); //shows wingspan did not change
+		System.out.println(gTest.toString()); //further showing the same wingspan
 		
 		System.out.println("****************************************\n\n             BrownBear Tests             \n\n****************************************");
 		BrownBear bTest = new BrownBear();
